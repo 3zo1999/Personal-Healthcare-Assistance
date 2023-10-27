@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Healthcare Assistance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        .header {
+            padding: 20px;
+            text-align: center;
+            background-color: #003366;
+            color: #ffffff;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .chatbox {
+            position: relative;
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .userInput {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-top: 1px solid #dddddd;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            outline: none;
+        }
+
+        .buttonContainer {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .submitBtn {
+            padding: 10px 20px;
+            background-color: #003366;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .submitBtn:hover {
+            background-color: #002b4d;
+        }
+
+        .messageContainer {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        .botMessage {
+            background-color: #e8f1f9;
+            margin-bottom: 10px;
+            color: #333333;
+            align-self: flex-start;
+        }
+
+        .userMessage {
+            background-color: #003366;
+            color: #ffffff;
+            align-self: flex-end;
+        }
+
+        .messageText {
+            margin: 0;
+            word-wrap: break-word;
+        }
+
+        .message.sender-bot .messageText {
+            margin-left: 15px;
+            margin-right: 50px;
+        }
+
+        .message.sender-user .messageText {
+            margin-left: 50px;
+            margin-right: 15px;
+        }
+
+        .botFace {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            background-image: url("chatbot-face.png"); /* Replace with the path to your chatbot face image */
+            background-size: cover;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Personal Healthcare Assistance</h1>
+        </div>
+
+        <div class="chatbox" id="chatbox">
+            <div class="botFace"></div>
+        </div>
+
+        <input type="text" class="userInput" id="userInput" placeholder="Enter your symptoms">
+
+        <div class="buttonContainer">
+            <button class="submitBtn" onclick="processUserInput()">Submit</button>
+        </div>
+    </div>
+
+    <script src="medicine_database.js"></script>
+    <script src="medicine_database_children.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
